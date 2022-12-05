@@ -1,0 +1,39 @@
+clear all
+close all
+clc
+disp('ELECTRICITY BILL GENERATOR');
+disp('***THIS GENERATOR IS CODED BY pavithran');
+disp('*** ACE ***');
+disp('MCS (Morning), Ramco institute of technology');
+disp('Roll # 1529');
+a=input('Enter Meter Number : ','s');
+b=input('Enter Subscriber Name : ','s');
+c=input('Enter Previous Reading : ');
+d=input('Enter Month End Reading : ');
+disp('Total Units Consumed are : ');
+units=d-c;
+disp(units);
+ElectricityCost=0;
+if units>500
+    ElectricityCost=(units-500)*6.6+(300*4.6)+(200*305)+50;
+elseif(units>200)&&(units<=500)
+    ElectricityCost=(units-200)*3+(100*2)+30;
+elseif(units>100)&&(units<=200)
+    ElectricityCost=(units-100)*1.5+20;
+else
+    ElectricityCost=units*0;
+end;
+fprintf ('\n\n\n\n\n\n\n\n');
+disp ('Billing Information For Meter No. : ');
+disp (a);
+disp ('Subscriber Name : ');
+disp (b);
+disp (' Previous Reading : ');
+disp (c);
+disp (' Month End Reading : ');
+disp (d);
+disp (' Total Units Consumed : ');
+disp (units);
+disp('Total Payment To Be Made Is : ');
+disp(ElectricityCost);
+
